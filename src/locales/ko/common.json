@@ -6,5 +6,10 @@
     "talk": "자유게시판",
     "club": "학생 단체 및 동아리",
     "trade": "거래"
+  },
+  "footer": {
+    "contributors": "만든 사람들",
+    "termsOfService": "이용 약관",
+    "contact": "문의"
   }
 }

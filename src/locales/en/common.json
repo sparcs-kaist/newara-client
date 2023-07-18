@@ -6,5 +6,10 @@
     "talk": "Talk",
     "club": "Organizations and Clubs",
     "trade": "Trade"
+  },
+  "footer": {
+    "contributors": "Contributors",
+    "termsOfService": "Terms of Service",
+    "contact": "Contact"
   }
 }

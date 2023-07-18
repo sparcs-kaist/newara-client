@@ -41,8 +41,11 @@ body {
 }
 
 button {
-  font-family: inherit;
   cursor: pointer;
+
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
 }
 
 @media (prefers-color-scheme: light) {
