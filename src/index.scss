@@ -30,6 +30,7 @@ html {
 }
 
 a {
+  color: inherit;
   text-decoration: inherit;
 }
 
@@ -46,7 +47,7 @@ button {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: clr.$black;
+    color: clr.$gray-500;
     background-color: clr.$white;
   }
 }

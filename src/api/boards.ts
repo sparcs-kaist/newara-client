@@ -12,8 +12,9 @@ const groupMap: string[] = [
 
 export const getBoardGroups = async (): Promise<BoardGroups> => {
   const res = await axios.get<Board[]>("/boards/");
-
   const boards = res.data;
+
+  // Groups are displayed in this order.
   const groups: BoardGroups = {
     notice: [],
     communication: [],

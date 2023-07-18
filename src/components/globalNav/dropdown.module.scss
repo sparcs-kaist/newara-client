@@ -1,0 +1,46 @@
+@use "@/styles/colors" as clr;
+
+.dropdown {
+  & .dropdown__items {
+    display: none;
+  }
+
+  &:hover .dropdown__items {
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 1.5rem;
+    padding: 0.5rem;
+
+    background-color: clr.$white;
+    box-shadow: 0 0.8rem 0.8rem #0a0a0a1a, 0 0 0 0.1rem #0a0a0a1a;
+
+    font-size: 1.5rem;
+
+    & > a {
+      padding: 0.6rem 3rem 0.6rem 1rem;
+
+      &:hover {
+        color: clr.$black;
+      }
+    }
+  }
+}
+
+.dropdown__name {
+  display: flex;
+  align-items: center;
+
+  height: 100%;
+  padding: 0 1.2rem;
+
+  cursor: default;
+
+  &:hover {
+    text-decoration: underline;
+    text-decoration-color: clr.$ara-red;
+    text-decoration-thickness: 0.2rem;
+  }
+}

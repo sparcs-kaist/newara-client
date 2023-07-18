@@ -1,5 +1,6 @@
 {
   "boardGroup": {
+    "all": "전체보기",
     "notice": "공지",
     "communication": "소통",
     "talk": "자유게시판",
