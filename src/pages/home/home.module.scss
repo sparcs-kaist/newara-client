@@ -1,9 +1,13 @@
 @use "@/styles/colors" as clr;
+@use "@/styles/mixins" as mix;
 
 .header {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
+
+  margin: 5rem 0;
+  max-width: mix.$home-header-max-width;
 }
 
 .slogan {
@@ -66,4 +70,16 @@
   font-weight: 500;
 
   color: clr.$ara-red;
+}
+
+.preview-container {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 2rem;
+
+  & > hr {
+    border: none;
+    width: 0.1rem;
+    background-color: clr.$gray-200;
+  }
 }

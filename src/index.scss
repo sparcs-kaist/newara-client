@@ -1,4 +1,5 @@
 @use "styles/colors" as clr;
+@use "styles/mixins" as mix;
 
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css");
 
@@ -30,7 +31,6 @@ html {
 }
 
 body {
-  min-width: 320px;
   min-height: 100vh;
   font-size: 1.6rem;
 }
@@ -45,7 +45,9 @@ body {
 main {
   flex: 1;
 
-  margin: 0 auto;
+  margin: 5rem auto;
+  width: clamp(mix.$breakpoint-mobile, 80%, mix.$breakpoint-desktop);
+  padding: 0 4rem;
 }
 
 a {

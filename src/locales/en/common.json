@@ -19,5 +19,10 @@
   },
   "keyword": {
     "keywords": "Keywords"
+  },
+  "preview": {
+    "dailyBest": "Daily Best",
+    "weeklyBest": "Weekly Best",
+    "araNotice": "Ara Notice"
   }
 }

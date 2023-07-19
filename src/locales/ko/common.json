@@ -19,5 +19,10 @@
   },
   "keyword": {
     "keywords": "키워드"
+  },
+  "preview": {
+    "dailyBest": "오늘의 인기글",
+    "weeklyBest": "이주의 인기글",
+    "araNotice": "Ara 공지"
   }
 }
