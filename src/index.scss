@@ -44,11 +44,17 @@ body {
 
 main {
   flex: 1;
+
+  margin: 0 auto;
 }
 
 a {
   color: inherit;
   text-decoration: inherit;
+}
+
+input {
+  font-size: inherit;
 }
 
 button {

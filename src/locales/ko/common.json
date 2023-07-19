@@ -16,5 +16,8 @@
     "text": "<0>Ara</0>, <1>{{accurate}}</1>를 <1>{{fast}}</1>",
     "fast": "가장 신속하게",
     "accurate": "가장 정확한 정보"
+  },
+  "keyword": {
+    "keywords": "키워드"
   }
 }

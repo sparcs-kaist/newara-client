@@ -16,5 +16,8 @@
     "text": "<0>Ara</0>, <1>{{fast}}</1> delivery of <1>{{accurate}}</1>",
     "fast": "the fastest",
     "accurate": "the most accurate information"
+  },
+  "keyword": {
+    "keywords": "Keywords"
   }
 }
