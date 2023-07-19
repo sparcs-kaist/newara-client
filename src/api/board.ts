@@ -1,5 +1,5 @@
 import axios from "@/api/axios";
-import { Board, BoardGroups } from "@/interfaces/boards";
+import { Board, BoardGroups } from "@/interfaces/board";
 
 const groupMap: string[] = [
   "", // groupId starts from index 1.

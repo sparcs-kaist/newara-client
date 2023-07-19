@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useBoardGroups } from "@/hooks/boards";
-import { Board } from "@/interfaces/boards";
+import { Board } from "@/interfaces/board";
 import { MdLanguage } from "react-icons/md";
 import { Dropdown } from "./Dropdown";
 import styles from "./globalnav.module.scss";
