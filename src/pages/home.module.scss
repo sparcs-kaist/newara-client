@@ -1,0 +1,14 @@
+@use "@/styles/colors" as clr;
+
+.slogan {
+  font-size: 3.2rem;
+  font-weight: inherit;
+}
+
+.slogan-bold {
+  font-weight: 700;
+}
+
+.slogan-red {
+  color: clr.$ara-red;
+}

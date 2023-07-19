@@ -11,5 +11,10 @@
     "contributors": "만든 사람들",
     "termsOfService": "이용 약관",
     "contact": "문의"
+  },
+  "slogan": {
+    "text": "<0>Ara</0>, <1>{{accurate}}</1>를 <1>{{fast}}</1>",
+    "fast": "가장 신속하게",
+    "accurate": "가장 정확한 정보"
   }
 }
