@@ -1,0 +1,9 @@
+{
+  "hidden": {
+    "ADULT_CONTENT": "This post has adult/obscene contents.",
+    "SOCIAL_CONTENT": "This post has political/social contents.",
+    "REPORTED_CONTENT": "This post was hidden due to cumulative reporting.",
+    "BLOCKED_USER_CONTENT": "This post was written by blocked user.",
+    "ACCESS_DENIED_CONTENT": "You do not have access to this post."
+  }
+}

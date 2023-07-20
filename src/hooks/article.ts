@@ -1,6 +1,6 @@
 import React from "react";
-import { getBestArticles } from "@/api/article";
-import { BestArticles } from "@/interfaces/article";
+import { getArticles, getBestArticles } from "@/api/article";
+import { Article, BestArticles } from "@/interfaces/article";
 
 export const useBestArticles = (): BestArticles => {
   const [bestArticles, setBestArticles] = React.useState<BestArticles>({
@@ -16,4 +16,17 @@ export const useBestArticles = (): BestArticles => {
   }, []);
 
   return bestArticles;
+};
+
+export const useNotices = (): Article[] => {
+  const [notices, setNotices] = React.useState<Article[]>([]);
+
+  React.useEffect(() => {
+    void (async () => {
+      const data = await getArticles({ board: 8, size: 5 });
+      setNotices(data.results);
+    })();
+  }, []);
+
+  return notices;
 };

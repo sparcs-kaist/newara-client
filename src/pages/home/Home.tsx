@@ -1,7 +1,8 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Trans, useTranslation } from "react-i18next";
-import { useBestArticles } from "@/hooks/article";
+import { useBestArticles, useNotices } from "@/hooks/article";
+import { getTitle } from "@/utils/article";
 import { MdSearch } from "react-icons/md";
 import { Preview } from "./Preview";
 import classNames from "classnames";
@@ -22,6 +23,7 @@ export const Home: React.FC = () => {
   const navigate = useNavigate();
 
   const bestArticles = useBestArticles();
+  const notices = useNotices();
 
   // TODO: Fetch API to get keywords.
   const keywords: Keyword[] = [
@@ -90,7 +92,7 @@ export const Home: React.FC = () => {
             header={t("preview.dailyBest")}
             items={bestArticles.dailyBests.map((article) => ({
               id: article.id,
-              title: article.title,
+              title: getTitle(article),
             }))}
           />
           <hr />
@@ -98,19 +100,16 @@ export const Home: React.FC = () => {
             header={t("preview.weeklyBest")}
             items={bestArticles.weeklyBests.map((article) => ({
               id: article.id,
-              title: article.title,
+              title: getTitle(article),
             }))}
           />
           <hr />
           <Preview
-            header={t("preview.araNotice")}
-            items={[
-              { id: 1, title: "Title1" },
-              { id: 2, title: "Title2" },
-              { id: 3, title: "Title3" },
-              { id: 4, title: "Title4" },
-              { id: 5, title: "Title5" },
-            ]}
+            header={t("preview.notice")}
+            items={notices.map((article) => ({
+              id: article.id,
+              title: getTitle(article),
+            }))}
           />
         </section>
       </main>
