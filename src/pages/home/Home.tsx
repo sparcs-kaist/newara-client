@@ -93,6 +93,7 @@ export const Home: React.FC = () => {
             items={bestArticles.dailyBests.map((article) => ({
               id: article.id,
               title: getTitle(article),
+              isHidden: article.is_hidden,
             }))}
           />
           <hr />
@@ -101,6 +102,7 @@ export const Home: React.FC = () => {
             items={bestArticles.weeklyBests.map((article) => ({
               id: article.id,
               title: getTitle(article),
+              isHidden: article.is_hidden,
             }))}
           />
           <hr />
@@ -109,6 +111,7 @@ export const Home: React.FC = () => {
             items={notices.map((article) => ({
               id: article.id,
               title: getTitle(article),
+              isHidden: article.is_hidden,
             }))}
           />
         </section>
