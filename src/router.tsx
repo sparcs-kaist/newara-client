@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import { GlobalLayout } from "@/layouts";
-import { Home } from "@/pages";
+import { Board, Home, boardLoader } from "@/pages";
 
 const router = createBrowserRouter([
   {
@@ -10,6 +10,11 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: "/board/:boardSlug?",
+        loader: boardLoader,
+        element: <Board />,
       },
       {
         path: "*",

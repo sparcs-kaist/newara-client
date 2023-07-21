@@ -17,13 +17,16 @@ export const getBestArticles = async (): Promise<BestArticles> => {
 
 export const getArticles = async ({
   board,
+  page,
   size,
 }: {
   board?: string;
+  page?: number;
   size?: number;
 }): Promise<BaseResponse<Article>> => {
   const endpoint = addQueries("/articles/", {
     board,
+    page,
     page_size: size,
   });
   const res = await axios.get<BaseResponse<Article>>(endpoint);
