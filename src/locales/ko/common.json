@@ -24,5 +24,9 @@
     "dailyBest": "오늘의 인기글",
     "weeklyBest": "이주의 인기글",
     "notice": "공지"
+  },
+  "article": {
+    "view": "조회수",
+    "date": "{{date, datetime}}"
   }
 }

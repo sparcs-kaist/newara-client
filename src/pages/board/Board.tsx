@@ -1,7 +1,7 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
-import { getTitle } from "@/utils/article";
 import { BoardData } from "./loader";
+import { BoardEntry } from "./BoardEntry";
 import { PageNavigator } from "./PageNavigator";
 import styles from "./board.module.scss";
 
@@ -12,16 +12,17 @@ export const Board: React.FC = () => {
     <main className={styles["board"]}>
       <section className={styles["board-container"]}>
         <h1>Board</h1>
-        <ul>
+        <ul className={styles["board-entry-container"]}>
           {articles.map((article) => (
-            <li key={article.id}>
-              <span>{getTitle(article)}</span>
-            </li>
+            <React.Fragment key={article.id}>
+              <BoardEntry article={article} />
+              <hr />
+            </React.Fragment>
           ))}
         </ul>
         <PageNavigator pageInfo={pageInfo} />
       </section>
-      <aside>
+      <aside className={styles["aside"]}>
         <section>Recent</section>
         <section>Bookmarks</section>
       </aside>

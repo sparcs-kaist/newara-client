@@ -2,8 +2,23 @@
 
 .board {
   display: flex;
+  gap: 4rem;
 }
 
 .board-container {
+  width: 70%;
+}
+
+.board-entry-container {
+  list-style: none;
+
+  & > hr {
+    border: none;
+    height: 0.1rem;
+    background-color: clr.$gray-100;
+  }
+}
+
+.aside {
   flex: 1;
 }

@@ -24,5 +24,9 @@
     "dailyBest": "Daily Best",
     "weeklyBest": "Weekly Best",
     "notice": "Notice"
+  },
+  "article": {
+    "view": "View",
+    "date": "{{date, datetime}}"
   }
 }
