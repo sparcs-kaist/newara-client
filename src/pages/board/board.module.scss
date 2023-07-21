@@ -1,0 +1,9 @@
+@use "@/styles/colors" as clr;
+
+.board {
+  display: flex;
+}
+
+.board-container {
+  flex: 1;
+}

@@ -1,0 +1,34 @@
+@use "@/styles/colors" as clr;
+
+.pages {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+
+  font-size: 1.4rem;
+
+  & > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-width: 2rem;
+    padding: 0.2rem;
+
+    &:hover {
+      color: clr.$gray-600;
+    }
+
+    &.current-page:hover {
+      color: clr.$ara-red-dark;
+    }
+  }
+}
+
+.current-page {
+  color: clr.$ara-red;
+}
+
+.pages-arrow {
+  font-size: 2rem;
+}

@@ -44,78 +44,76 @@ export const Home: React.FC = () => {
   };
 
   return (
-    <>
-      <main>
-        <header className={styles["header"]}>
-          <h1 className={styles["slogan"]}>
-            <Trans
-              i18nKey="slogan.text"
-              values={{
-                fast: t("slogan.fast"),
-                accurate: t("slogan.accurate"),
-              }}
-              components={[
-                <span className={styles["slogan-bold"]} />,
-                <span
-                  className={classNames(
-                    styles["slogan-bold"],
-                    styles["slogan-red"]
-                  )}
-                />,
-              ]}
-            />
-          </h1>
-          <form className={styles["search"]} onSubmit={search}>
-            <button type="submit">
-              <MdSearch />
-            </button>
-            <input type="search" name="query" />
-          </form>
-          <div className={styles["keyword-container"]}>
-            <span className={styles["keyword"]}>{t("keyword.keywords")}</span>
-            {keywords.map((keyword) => {
-              const query = keyword[i18n.language as keyof Keyword];
-              return (
-                <Link
-                  key={keyword.key}
-                  className={styles["keyword-item"]}
-                  to={`/board?query=${query}`}
-                >
-                  {query}
-                </Link>
-              );
-            })}
-          </div>
-        </header>
-        <section className={styles["preview-container"]}>
-          <Preview
-            header={t("preview.dailyBest")}
-            items={bestArticles.dailyBests.map((article) => ({
-              id: article.id,
-              title: getTitle(article),
-              isHidden: article.is_hidden,
-            }))}
+    <main>
+      <header className={styles["header"]}>
+        <h1 className={styles["slogan"]}>
+          <Trans
+            i18nKey="slogan.text"
+            values={{
+              fast: t("slogan.fast"),
+              accurate: t("slogan.accurate"),
+            }}
+            components={[
+              <span className={styles["slogan-bold"]} />,
+              <span
+                className={classNames(
+                  styles["slogan-bold"],
+                  styles["slogan-red"]
+                )}
+              />,
+            ]}
           />
-          <hr />
-          <Preview
-            header={t("preview.weeklyBest")}
-            items={bestArticles.weeklyBests.map((article) => ({
-              id: article.id,
-              title: getTitle(article),
-              isHidden: article.is_hidden,
-            }))}
-          />
-          <hr />
-          <Preview
-            header={t("preview.notice")}
-            items={notices.map((article) => ({
-              id: article.id,
-              title: getTitle(article),
-              isHidden: article.is_hidden,
-            }))}
-          />
-        </section>
-      </main>
-    </>
+        </h1>
+        <form className={styles["search"]} onSubmit={search}>
+          <button type="submit">
+            <MdSearch />
+          </button>
+          <input type="search" name="query" />
+        </form>
+        <div className={styles["keyword-container"]}>
+          <span className={styles["keyword"]}>{t("keyword.keywords")}</span>
+          {keywords.map((keyword) => {
+            const query = keyword[i18n.language as keyof Keyword];
+            return (
+              <Link
+                key={keyword.key}
+                className={styles["keyword-item"]}
+                to={`/board?query=${query}`}
+              >
+                {query}
+              </Link>
+            );
+          })}
+        </div>
+      </header>
+      <section className={styles["preview-container"]}>
+        <Preview
+          header={t("preview.dailyBest")}
+          items={bestArticles.dailyBests.map((article) => ({
+            id: article.id,
+            title: getTitle(article),
+            isHidden: article.is_hidden,
+          }))}
+        />
+        <hr />
+        <Preview
+          header={t("preview.weeklyBest")}
+          items={bestArticles.weeklyBests.map((article) => ({
+            id: article.id,
+            title: getTitle(article),
+            isHidden: article.is_hidden,
+          }))}
+        />
+        <hr />
+        <Preview
+          header={t("preview.notice")}
+          items={notices.map((article) => ({
+            id: article.id,
+            title: getTitle(article),
+            isHidden: article.is_hidden,
+          }))}
+        />
+      </section>
+    </main>
   );
 };
