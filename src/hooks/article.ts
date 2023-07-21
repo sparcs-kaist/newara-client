@@ -23,7 +23,7 @@ export const useNotices = (): Article[] => {
 
   React.useEffect(() => {
     void (async () => {
-      const data = await getArticles({ board: 8, size: 5 });
+      const data = await getArticles({ board: "ara-notice", size: 5 });
       setNotices(data.results);
     })();
   }, []);

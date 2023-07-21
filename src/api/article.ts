@@ -19,11 +19,11 @@ export const getArticles = async ({
   board,
   size,
 }: {
-  board?: number;
+  board?: string;
   size?: number;
 }): Promise<BaseResponse<Article>> => {
   const endpoint = addQueries("/articles/", {
-    parent_board: board,
+    board,
     page_size: size,
   });
   const res = await axios.get<BaseResponse<Article>>(endpoint);
