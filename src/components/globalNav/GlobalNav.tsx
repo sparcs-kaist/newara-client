@@ -21,7 +21,7 @@ export const GlobalNav: React.FC = () => {
       </Link>
       <div className={styles["nav-container"]}>
         <Link className={styles["single-nav"]} to="/board">
-          {t("boardGroup.all")}
+          {t("board.all")}
         </Link>
         {boardGroups.map((group) => {
           return group.boards.length <= 1 ? (

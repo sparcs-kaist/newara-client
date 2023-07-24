@@ -9,6 +9,37 @@
   width: 70%;
 }
 
+.board-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+
+  padding: 0.4rem 0;
+}
+
+.filter-container {
+  display: flex;
+  flex: 1;
+
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+
+.filter-name {
+  font-weight: 500;
+}
+
+.filter {
+  border-right: 0.1rem solid clr.$gray-200;
+  padding: 0 0.6rem;
+}
+
+.filter-selected {
+  font-weight: 500;
+  color: clr.$ara-red;
+}
+
 .board-entry-container {
   list-style: none;
 

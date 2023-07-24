@@ -1,6 +1,8 @@
 {
-  "boardGroup": {
-    "all": "전체보기"
+  "board": {
+    "all": "전체보기",
+    "filter": "필터",
+    "filter-none": "없음"
   },
   "footer": {
     "contributors": "만든 사람들",

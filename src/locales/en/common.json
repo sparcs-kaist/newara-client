@@ -1,6 +1,8 @@
 {
-  "boardGroup": {
-    "all": "All"
+  "board": {
+    "all": "All",
+    "filter": "Filter",
+    "filter-none": "None"
   },
   "footer": {
     "contributors": "Contributors",
