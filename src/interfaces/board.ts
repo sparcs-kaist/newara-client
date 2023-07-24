@@ -10,6 +10,9 @@ export interface Board {
   slug: string;
   ko_name: string;
   en_name: string;
+}
+
+export interface BoardDetail extends Board {
   is_readonly: boolean;
   name_type: number;
   group_id: number;
@@ -22,6 +25,10 @@ export interface Board {
   user_writable: boolean;
 }
 
-export interface BoardGroups {
-  [name: string]: Board[];
+export interface BoardGroup {
+  id: number;
+  slug: string;
+  ko_name: string;
+  en_name: string;
+  boards: Board[];
 }

@@ -1,9 +1,9 @@
 import React from "react";
 import { getBoardGroups } from "@/api/board";
-import { BoardGroups } from "@/interfaces/board";
+import { BoardGroup } from "@/interfaces/board";
 
-export const useBoardGroups = (): BoardGroups => {
-  const [boardGroups, setBoardGroups] = React.useState<BoardGroups>({});
+export const useBoardGroups = (): BoardGroup[] => {
+  const [boardGroups, setBoardGroups] = React.useState<BoardGroup[]>([]);
 
   React.useEffect(() => {
     void (async () => {

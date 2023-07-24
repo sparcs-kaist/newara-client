@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useBoardGroups } from "@/hooks/boards";
-import { Board } from "@/interfaces/board";
+import { Board, BoardGroup } from "@/interfaces/board";
 import { MdLanguage } from "react-icons/md";
 import { Dropdown } from "./Dropdown";
 import styles from "./globalnav.module.scss";
@@ -21,23 +21,23 @@ export const GlobalNav: React.FC = () => {
         <Link className={styles["single-nav"]} to="/board">
           {t("boardGroup.all")}
         </Link>
-        {Object.entries(boardGroups).map(([groupName, boards]) => {
-          const name = (i18n.language + "_name") as keyof Board;
-          return boards.length <= 1 ? (
+        {boardGroups.map((group) => {
+          const name = i18n.language + "_name";
+          return group.boards.length <= 1 ? (
             <Link
-              key={groupName}
+              key={group.id}
               className={styles["single-nav"]}
-              to={`/board/${boards[0].slug}`}
+              to={`/board/${group.boards[0].slug}`}
             >
-              {boards[0][name] as string}
+              {group.boards[0][name as keyof Board] as string}
             </Link>
           ) : (
             <Dropdown
-              key={groupName}
-              name={t(`boardGroup.${groupName}`)}
-              items={boards.map((board) => {
+              key={group.id}
+              name={group[name as keyof BoardGroup] as string}
+              items={group.boards.map((board) => {
                 return {
-                  name: board[name] as string,
+                  name: board[name as keyof Board] as string,
                   link: `/board/${board.slug}`,
                 };
               })}
