@@ -1,11 +1,6 @@
 {
   "boardGroup": {
-    "all": "전체보기",
-    "notice": "공지",
-    "communication": "소통",
-    "talk": "자유게시판",
-    "club": "학생 단체 및 동아리",
-    "trade": "거래"
+    "all": "전체보기"
   },
   "footer": {
     "contributors": "만든 사람들",

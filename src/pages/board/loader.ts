@@ -1,9 +1,12 @@
 import type { LoaderFunctionArgs } from "react-router-dom";
 import { getArticles } from "@/api/article";
+import { getBoard } from "@/api/board";
 import type { Article } from "@/interfaces/article";
 import { PageInfo } from "@/interfaces/base";
+import { BoardDetail } from "@/interfaces/board";
 
 export interface BoardData {
+  board: BoardDetail | null;
   articles: Article[];
   pageInfo: PageInfo;
 }
@@ -15,9 +18,13 @@ export const boardLoader = async ({
   const pageQ = Number(new URL(request.url).searchParams.get("page"));
   const page = isNaN(pageQ) || pageQ < 1 ? undefined : pageQ;
 
+  const boardSlug = params["boardSlug"];
+
+  const board = boardSlug === undefined ? null : await getBoard(boardSlug);
+
   const { results, ...pageInfo } = await getArticles({
-    board: params["boardSlug"],
+    board: boardSlug,
     page,
   });
-  return { articles: results, pageInfo };
+  return { board, articles: results, pageInfo };
 };

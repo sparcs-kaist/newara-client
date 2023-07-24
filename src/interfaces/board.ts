@@ -15,7 +15,12 @@ export interface Board {
 export interface BoardDetail extends Board {
   is_readonly: boolean;
   name_type: number;
-  group_id: number;
+  group: {
+    id: number;
+    slug: string;
+    ko_name: string;
+    en_name: string;
+  };
   banner_image: string;
   ko_banner_description: string;
   en_banner_description: string;
