@@ -23,7 +23,9 @@ export const Preview: React.FC<{
               [styles["hidden"]]: isHidden,
             })}
           >
-            <Link to="#">{title}</Link>
+            <Link to="#" title={title}>
+              {title}
+            </Link>
           </li>
         ))}
       </ul>
