@@ -1,5 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { MdOutlineAttachFile, MdOutlineImage } from "react-icons/md";
 import { useLocalName } from "@/hooks/i18n";
 import { getTitle } from "@/utils/article";
 import { millisecondsToHours } from "@/utils/base";
@@ -40,6 +41,14 @@ export const BoardEntry: React.FC<{ article: ArticleListItem }> = ({
             <span className={styles["comment-count"]}>
               ({article.comment_count})
             </span>
+          ) : null}
+          {article.attachment_type === "IMAGE" ||
+          article.attachment_type === "BOTH" ? (
+            <MdOutlineImage />
+          ) : null}
+          {article.attachment_type === "NON_IMAGE" ||
+          article.attachment_type === "BOTH" ? (
+            <MdOutlineAttachFile />
           ) : null}
           {article.read_status !== "-" && before24Hours ? (
             <span className={styles["status-tag"]}>
