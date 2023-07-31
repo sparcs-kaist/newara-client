@@ -4,26 +4,22 @@ import { useTranslation } from "react-i18next";
 import { BoardData } from "./loader";
 import { BoardEntry } from "./BoardEntry";
 import { PageNavigator } from "./PageNavigator";
-import type { BoardDetail, Topic } from "@/interfaces/board";
+import { useLocalName } from "@/hooks/i18n";
 import classNames from "classnames";
 import styles from "./board.module.scss";
 
 export const Board: React.FC = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
+  const localName = useLocalName();
+
   const { board, articles, pageInfo } = useLoaderData() as BoardData;
   const [searchParams] = useSearchParams();
-
-  const local_name = i18n.language + "_name";
 
   return (
     <main className={styles["board"]}>
       <section className={styles["board-container"]}>
         <header className={styles["board-header"]}>
-          <h1>
-            {board === null
-              ? t("board.all")
-              : (board[local_name as keyof BoardDetail] as string)}
-          </h1>
+          <h1>{board === null ? t("board.all") : board[localName]}</h1>
           <div className={styles["filter-container"]}>
             {board === null || board.topics.length === 0 ? null : (
               <>
@@ -53,7 +49,7 @@ export const Board: React.FC = () => {
                     })}
                     to={`.?topic=${topic.slug}`}
                   >
-                    {topic[local_name as keyof Topic]}
+                    {topic[localName]}
                   </Link>
                 ))}
               </>
