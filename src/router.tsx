@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import { GlobalLayout } from "@/layouts";
 import { Board, Home, Post, boardLoader } from "@/pages";
+import { postLoader } from "./pages/post/loader";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/post/:postId",
+        loader: postLoader,
         element: <Post />,
       },
       {

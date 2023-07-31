@@ -1,6 +1,10 @@
 import axios from "@/api/axios";
 import { addQueries } from "./utils";
-import type { ArticleListItem, BestArticles } from "@/interfaces/article";
+import type {
+  ArticleDetail,
+  ArticleListItem,
+  BestArticles,
+} from "@/interfaces/article";
 import { BaseResponse } from "@/interfaces/base";
 
 interface Bests {
@@ -30,6 +34,12 @@ export const getArticles = async ({
     page_size: size,
   });
   const res = await axios.get<BaseResponse<ArticleListItem>>(endpoint);
+
+  return res.data;
+};
+
+export const getArticle = async (id: number): Promise<ArticleDetail> => {
+  const res = await axios.get<ArticleDetail>(`/articles/${id}/`);
 
   return res.data;
 };
