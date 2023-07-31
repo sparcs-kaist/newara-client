@@ -1,11 +1,11 @@
 import axios from "@/api/axios";
 import { addQueries } from "./utils";
-import { Article, BestArticles } from "@/interfaces/article";
+import type { ArticleListItem, BestArticles } from "@/interfaces/article";
 import { BaseResponse } from "@/interfaces/base";
 
 interface Bests {
-  daily_bests: Article[];
-  weekly_bests: Article[];
+  daily_bests: ArticleListItem[];
+  weekly_bests: ArticleListItem[];
 }
 
 export const getBestArticles = async (): Promise<BestArticles> => {
@@ -23,13 +23,13 @@ export const getArticles = async ({
   board?: string;
   page?: number;
   size?: number;
-}): Promise<BaseResponse<Article>> => {
+}): Promise<BaseResponse<ArticleListItem>> => {
   const endpoint = addQueries("/articles/", {
     board,
     page,
     page_size: size,
   });
-  const res = await axios.get<BaseResponse<Article>>(endpoint);
+  const res = await axios.get<BaseResponse<ArticleListItem>>(endpoint);
 
   return res.data;
 };

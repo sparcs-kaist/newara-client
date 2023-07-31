@@ -1,13 +1,13 @@
 import type { LoaderFunctionArgs } from "react-router-dom";
 import { getArticles } from "@/api/article";
 import { getBoard } from "@/api/board";
-import type { Article } from "@/interfaces/article";
+import type { ArticleListItem } from "@/interfaces/article";
 import { PageInfo } from "@/interfaces/base";
 import { BoardDetail } from "@/interfaces/board";
 
 export interface BoardData {
   board: BoardDetail | null;
-  articles: Article[];
+  articles: ArticleListItem[];
   pageInfo: PageInfo;
 }
 
