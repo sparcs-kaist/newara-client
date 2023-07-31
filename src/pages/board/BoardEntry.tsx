@@ -1,11 +1,23 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { getTitle } from "@/utils/article";
-import type { Article } from "@/interfaces/article";
+import { millisecondsToHours } from "@/utils/base";
+import type { ArticleListItem } from "@/interfaces/article";
 import styles from "./boardentry.module.scss";
 
-export const BoardEntry: React.FC<{ article: Article }> = ({ article }) => {
+export const BoardEntry: React.FC<{ article: ArticleListItem }> = ({
+  article,
+}) => {
   const { t } = useTranslation();
+
+  const tagName = { N: "new", U: "up" };
+
+  const { created_at, commented_at, content_updated_at } = article;
+  const updates = [created_at, commented_at, content_updated_at].map((date) =>
+    new Date(date ?? 0).getTime()
+  );
+  const before24Hours =
+    millisecondsToHours(new Date().getTime() - Math.max(...updates)) < 24;
 
   return (
     <li className={styles["entry"]}>
@@ -15,7 +27,14 @@ export const BoardEntry: React.FC<{ article: Article }> = ({ article }) => {
         alt="Profile Image"
       />
       <div className={styles["body"]}>
-        <span className={styles["title"]}>{getTitle(article)}</span>
+        <div className={styles["title-container"]}>
+          <span className={styles["title"]}>{getTitle(article)}</span>
+          {article.read_status !== "-" && before24Hours ? (
+            <span className={styles["status-tag"]}>
+              {tagName[article.read_status]}
+            </span>
+          ) : null}
+        </div>
         <div className={styles["info-container"]}>
           <span>
             {t("article.date", {
