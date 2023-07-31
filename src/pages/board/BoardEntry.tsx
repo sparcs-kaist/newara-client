@@ -2,9 +2,10 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { MdOutlineAttachFile, MdOutlineImage } from "react-icons/md";
 import { useLocalName } from "@/hooks/i18n";
-import { getTitle } from "@/utils/article";
+import { getHiddenProfileImage, getTitle } from "@/utils/article";
 import { millisecondsToHours } from "@/utils/base";
 import type { ArticleListItem } from "@/interfaces/article";
+import classNames from "classnames";
 import styles from "./boardentry.module.scss";
 
 export const BoardEntry: React.FC<{ article: ArticleListItem }> = ({
@@ -22,13 +23,20 @@ export const BoardEntry: React.FC<{ article: ArticleListItem }> = ({
   const before24Hours =
     millisecondsToHours(new Date().getTime() - Math.max(...updates)) < 24;
 
+  const HiddenProfileImage = getHiddenProfileImage(article);
+
   return (
     <li className={styles["entry"]}>
-      <img
-        className={styles["profile-img"]}
-        src={article.created_by.profile.picture}
-        alt="Profile Image"
-      />
+      {HiddenProfileImage ? (
+        <HiddenProfileImage className={styles["profile-img-hidden"]} />
+      ) : (
+        <img
+          className={styles["profile-img"]}
+          src={article.created_by.profile.picture}
+          alt="Profile Image"
+        />
+      )}
+
       <div className={styles["body"]}>
         <div className={styles["title-container"]}>
           {article.parent_topic === null ? null : (
@@ -36,7 +44,13 @@ export const BoardEntry: React.FC<{ article: ArticleListItem }> = ({
               [{article.parent_topic[localName]}]
             </span>
           )}
-          <span className={styles["title"]}>{getTitle(article)}</span>
+          <span
+            className={classNames(styles["title"], {
+              [styles["hidden"]]: article.is_hidden,
+            })}
+          >
+            {getTitle(article)}
+          </span>
           {article.comment_count ? (
             <span className={styles["comment-count"]}>
               ({article.comment_count})
@@ -80,7 +94,11 @@ export const BoardEntry: React.FC<{ article: ArticleListItem }> = ({
           </span>
         </div>
       </div>
-      <span className={styles["author"]}>
+      <span
+        className={classNames(styles["author"], {
+          [styles["hidden"]]: article.is_hidden,
+        })}
+      >
         {article.created_by.profile.nickname}
       </span>
     </li>

@@ -16,6 +16,16 @@
   height: 4rem;
 }
 
+.profile-img-hidden {
+  border-radius: 50%;
+  padding: 0.8rem;
+
+  background-color: clr.$gray-200;
+
+  font-size: 4rem;
+  color: clr.$white;
+}
+
 .body {
   flex: 1;
 
@@ -85,4 +95,8 @@
 
 .downvote {
   color: clr.$downvote;
+}
+
+.hidden {
+  color: clr.$gray-300;
 }
