@@ -29,6 +29,11 @@ export const BoardEntry: React.FC<{ article: ArticleListItem }> = ({
       <div className={styles["body"]}>
         <div className={styles["title-container"]}>
           <span className={styles["title"]}>{getTitle(article)}</span>
+          {article.comment_count ? (
+            <span className={styles["comment-count"]}>
+              ({article.comment_count})
+            </span>
+          ) : null}
           {article.read_status !== "-" && before24Hours ? (
             <span className={styles["status-tag"]}>
               {tagName[article.read_status]}
