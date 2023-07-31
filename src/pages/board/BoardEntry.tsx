@@ -1,5 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { useLocalName } from "@/hooks/i18n";
 import { getTitle } from "@/utils/article";
 import { millisecondsToHours } from "@/utils/base";
 import type { ArticleListItem } from "@/interfaces/article";
@@ -9,6 +10,7 @@ export const BoardEntry: React.FC<{ article: ArticleListItem }> = ({
   article,
 }) => {
   const { t } = useTranslation();
+  const localName = useLocalName();
 
   const tagName = { N: "new", U: "up" };
 
@@ -28,6 +30,11 @@ export const BoardEntry: React.FC<{ article: ArticleListItem }> = ({
       />
       <div className={styles["body"]}>
         <div className={styles["title-container"]}>
+          {article.parent_topic === null ? null : (
+            <span className={styles["topic"]}>
+              [{article.parent_topic[localName]}]
+            </span>
+          )}
           <span className={styles["title"]}>{getTitle(article)}</span>
           {article.comment_count ? (
             <span className={styles["comment-count"]}>
