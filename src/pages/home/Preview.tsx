@@ -23,7 +23,7 @@ export const Preview: React.FC<{
               [styles["hidden"]]: isHidden,
             })}
           >
-            <Link to="#" title={title}>
+            <Link to={`/post/${id}`} title={title}>
               {title}
             </Link>
           </li>
