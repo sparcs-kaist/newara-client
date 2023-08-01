@@ -1,0 +1,30 @@
+@use "@/styles/colors" as clr;
+
+.container {
+  display: flex;
+  gap: 1.6rem;
+}
+
+.vote {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  border: none;
+
+  background: none;
+
+  color: clr.$gray-400;
+
+  & > svg {
+    font-size: 2rem;
+  }
+}
+
+.up {
+  color: clr.$upvote;
+}
+
+.down {
+  color: clr.$downvote;
+}
