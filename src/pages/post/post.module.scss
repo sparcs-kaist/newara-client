@@ -1,0 +1,150 @@
+@use "@/styles/colors" as clr;
+
+.board-nav {
+  padding: 0.5rem 0;
+}
+
+.to-board {
+  display: flex;
+  align-items: center;
+
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: clr.$ara-red;
+
+  & > svg {
+    font-size: 2.4rem;
+  }
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+
+  padding: 1rem 0;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 700;
+
+  & > span {
+    font-weight: 400;
+    color: clr.$ara-red;
+  }
+}
+
+.info-container {
+  display: flex;
+  gap: 1.6rem;
+}
+
+.author-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  & > img {
+    object-fit: cover;
+
+    border-radius: 50%;
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+
+  & > span {
+    font-weight: 500;
+  }
+
+  & > svg {
+    font-size: 2.4rem;
+  }
+}
+
+.contents {
+  padding: 2rem 0;
+
+  h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+  }
+
+  h2 {
+    font-size: 2.4rem;
+    font-weight: 700;
+  }
+
+  h3 {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  a {
+    color: clr.$link;
+  }
+
+  p {
+    margin: 1rem 0;
+  }
+
+  i,
+  em {
+    font-synthesis: style;
+  }
+
+  ul {
+    margin-left: 2rem;
+    list-style: disc outside;
+  }
+
+  blockquote {
+    border-left: 0.5rem solid clr.$gray-200;
+    padding: 0.8rem 2rem;
+
+    background-color: clr.$gray-100;
+  }
+
+  pre {
+    padding: 2rem;
+
+    background-color: clr.$gray-100;
+
+    code {
+      border-radius: 0;
+      padding: 0;
+
+      background-color: transparent;
+
+      color: inherit;
+    }
+  }
+
+  code {
+    border-radius: 1rem;
+    padding: 0.25em 0.5em 0.25em;
+
+    background-color: clr.$gray-100;
+
+    color: clr.$code;
+  }
+
+  hr {
+    border: none;
+    height: 0.1rem;
+
+    background-color: clr.$gray-100;
+  }
+}
+
+.divider-dark {
+  border: none;
+  height: 0.1rem;
+  background-color: clr.$black;
+}
+
+.divider-light {
+  border: none;
+  height: 0.1rem;
+  background-color: clr.$gray-100;
+}

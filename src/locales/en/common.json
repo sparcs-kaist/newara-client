@@ -24,6 +24,7 @@
   },
   "article": {
     "view": "View",
-    "date": "{{date, datetime}}"
+    "date": "{{date, datetime}}",
+    "postedAt": "Posted at"
   }
 }

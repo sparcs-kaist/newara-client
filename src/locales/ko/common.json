@@ -24,6 +24,7 @@
   },
   "article": {
     "view": "조회수",
-    "date": "{{date, datetime}}"
+    "date": "{{date, datetime}}",
+    "postedAt": "작성일"
   }
 }
