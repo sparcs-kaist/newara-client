@@ -2,12 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Votes } from "./Votes";
-import type { ArticleNestedComment } from "@/interfaces/comment";
+import type { Comment as CommentType } from "@/interfaces/comment";
 import styles from "./comment.module.scss";
 
-export const Comment: React.FC<{ comment: ArticleNestedComment }> = ({
-  comment,
-}) => {
+export const Comment: React.FC<{ comment: CommentType }> = ({ comment }) => {
   const { t } = useTranslation();
 
   const [isReplyOpened, setIsReplyOpened] = React.useState<boolean>(false);
@@ -53,10 +51,24 @@ export const Comment: React.FC<{ comment: ArticleNestedComment }> = ({
           parentId={comment.id}
           isArticle={false}
         />
-        <button className={styles["reply-btn"]} onClick={replyBtnHandler}>
-          {t(isReplyOpened ? "comment.closeReply" : "comment.reply")}
-        </button>
+        {comment.comments ? (
+          <button className={styles["reply-btn"]} onClick={replyBtnHandler}>
+            {t(isReplyOpened ? "comment.closeReply" : "comment.reply")}
+          </button>
+        ) : null}
       </div>
+      {comment.comments && comment.comments.length ? (
+        <>
+          <div className={styles["reply-bar"]}>
+            <hr />
+          </div>
+          <div className={styles["reply-container"]}>
+            {comment.comments.map((reply) => (
+              <Comment key={reply.id} comment={reply} />
+            ))}
+          </div>
+        </>
+      ) : null}
     </div>
   );
 };

@@ -24,8 +24,5 @@ export interface Comment {
   hidden_at: string | null;
   parent_article: number | null;
   parent_comment: number | null;
-}
-
-export interface ArticleNestedComment extends Comment {
-  comments: Comment[];
+  comments?: Comment[];
 }
