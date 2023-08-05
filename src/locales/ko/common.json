@@ -26,5 +26,11 @@
     "view": "조회수",
     "date": "{{date, datetime}}",
     "postedAt": "작성일"
+  },
+  "comment": {
+    "comment_one": "댓글",
+    "comment_other": "댓글",
+    "reply": "답글 작성",
+    "closeReply": "답글 접기"
   }
 }

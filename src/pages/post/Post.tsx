@@ -3,6 +3,7 @@ import { Link, useLoaderData } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import type { PostData } from "./loader";
+import { Comment } from "./Comment";
 import { Votes } from "./Votes";
 import { useLocalName } from "@/hooks/i18n";
 import styles from "./post.module.scss";
@@ -61,7 +62,7 @@ export const Post: React.FC = () => {
           className={styles["contents"]}
           dangerouslySetInnerHTML={{ __html: article.content }}
         />
-        <div>
+        <div className={styles["button-container"]}>
           <div>
             <Votes
               state={article.my_vote}
@@ -71,6 +72,16 @@ export const Post: React.FC = () => {
               isArticle={true}
             />
           </div>
+        </div>
+        <hr className={styles["divider-dark"]} />
+        <h2 className={styles["comments"]}>
+          {t("comment.comment", { count: article.comment_count })}{" "}
+          <span>{article.comment_count}</span>
+        </h2>
+        <div className={styles["comment-container"]}>
+          {article.comments.map((comment) => (
+            <Comment key={comment.id} comment={comment} />
+          ))}
         </div>
       </section>
     </main>

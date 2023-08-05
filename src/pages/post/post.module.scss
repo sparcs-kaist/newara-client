@@ -137,6 +137,30 @@
   }
 }
 
+.button-container {
+  display: flex;
+  justify-content: center;
+
+  padding: 3rem 0 6rem;
+}
+
+.comments {
+  margin-top: 1em;
+
+  font-size: 1.8rem;
+  font-weight: 700;
+
+  & > span {
+    color: clr.$gray-300;
+  }
+}
+
+.comment-container {
+  & > div:not(:first-child) {
+    border-top: 0.1rem solid clr.$gray-100;
+  }
+}
+
 .divider-dark {
   border: none;
   height: 0.1rem;
