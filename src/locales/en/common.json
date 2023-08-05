@@ -26,5 +26,11 @@
     "view": "View",
     "date": "{{date, datetime}}",
     "postedAt": "Posted at"
+  },
+  "comment": {
+    "comment_one": "Comment",
+    "comment_other": "Comments",
+    "reply": "Reply",
+    "closeReply": "Close Reply"
   }
 }
