@@ -13,20 +13,24 @@
   color: clr.$ara-red;
 
   & > svg {
-    font-size: 2.4rem;
+    margin-left: -0.35em;
+    margin-right: -0.1em;
+
+    font-size: 3rem;
   }
 }
 
 .header {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
 
-  padding: 1rem 0;
+  padding: 1.2rem 0;
 }
 
 .title {
-  font-size: 1.8rem;
+  margin-bottom: 0.4rem;
+
+  font-size: 2rem;
   font-weight: 700;
 
   & > span {
@@ -36,6 +40,10 @@
 }
 
 .info-container {
+  margin-bottom: 1.4rem;
+
+  font-size: 1.5rem;
+
   display: flex;
   gap: 1.6rem;
 }
@@ -66,16 +74,22 @@
   padding: 2rem 0;
 
   h1 {
+    margin: 1em 0 0.5em;
+
     font-size: 2.8rem;
     font-weight: 700;
   }
 
   h2 {
+    margin: 1em 0 0.5em;
+
     font-size: 2.4rem;
     font-weight: 700;
   }
 
   h3 {
+    margin: 1em 0 0.5em;
+
     font-size: 2rem;
     font-weight: 700;
   }
@@ -93,22 +107,21 @@
     font-synthesis: style;
   }
 
+  ol,
   ul {
-    margin-left: 2rem;
-    list-style: disc outside;
+    margin-left: 3rem;
   }
 
   blockquote {
-    border-left: 0.5rem solid clr.$gray-200;
-    padding: 0.8rem 2rem;
-
-    background-color: clr.$gray-100;
+    border-left: 0.5rem solid clr.$gray-500;
+    padding: 0.3rem 2rem;
   }
 
   pre {
-    padding: 2rem;
+    padding: 2.5rem;
 
     background-color: clr.$gray-100;
+    overflow-x: auto;
 
     code {
       border-radius: 0;
@@ -121,8 +134,8 @@
   }
 
   code {
-    border-radius: 1rem;
-    padding: 0.25em 0.5em 0.25em;
+    border-radius: 0.6rem;
+    padding: 0.2em 0.4em;
 
     background-color: clr.$gray-100;
 
@@ -130,6 +143,7 @@
   }
 
   hr {
+    margin: 2.4rem 0 2.4rem;
     border: none;
     height: 0.1rem;
 
