@@ -48,3 +48,26 @@
 
   background: none;
 }
+
+.reply-bar {
+  display: flex;
+  justify-content: center;
+
+  grid-column: 1 / 2;
+  grid-row: 2 / 5;
+
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+
+  & > hr {
+    border: none;
+    width: 0.1rem;
+    height: 100%;
+
+    background-color: clr.$gray-200;
+  }
+}
+
+.reply-container {
+  padding-top: 2rem;
+}

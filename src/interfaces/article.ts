@@ -1,6 +1,6 @@
 import { Board, Topic } from "./board";
-import { ArticleNestedComment } from "./comment";
-import { User } from "./user";
+import type { Comment } from "./comment";
+import type { User } from "./user";
 
 export type HiddenReason =
   | "ADULT_CONTENT"
@@ -61,7 +61,7 @@ export interface ArticleDetail extends Article {
       is_school_admin: boolean;
     };
   };
-  comments: ArticleNestedComment[];
+  comments: Comment[];
   is_mine: boolean;
   content: string;
   my_vote: boolean | null;
